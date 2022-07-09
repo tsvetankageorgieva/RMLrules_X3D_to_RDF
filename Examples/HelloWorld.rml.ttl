@@ -1,0 +1,866 @@
+@prefix : <http://example.org/> .
+@prefix rules: <http://example.org/rules/> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix schema: <http://schema.org/> .
+@prefix x3do: <https://www.web3d.org/specifications/X3dOntology4.0#> .
+@prefix x3d: <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+rules:X3DMap a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D" 
+  ];
+  rr:subjectMap [
+    rr:template :X3D;
+    rr:class owl:NamedIndividual
+  ];
+ rr:predicateObjectMap [
+  rr:predicate rdf:type;
+  rr:objectMap [
+    rr:constant x3do:X3D
+  ]
+];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasHead;
+  rr:objectMap [
+    rr:constant :head
+  ]
+];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasScene;
+  rr:objectMap [
+    rr:constant :Scene
+  ]
+];
+ rr:predicateObjectMap [
+  rr:predicate x3do:profile;
+  rr:objectMap [
+    rml:reference "@profile"
+  ]
+];
+ rr:predicateObjectMap [
+  rr:predicate x3do:version;
+  rr:objectMap [
+    rml:reference "@version"
+  ]
+];
+ rr:predicateObjectMap [
+  rr:predicate x3do:noNamespaceSchemaLocation;
+  rr:objectMap [
+    rr:constant "https://www.web3d.org/specifications/x3d-3.3.xsd"
+  ]
+].
+
+rules:HeadMap a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/head"
+  ];
+rr:subjectMap [
+    rr:template :head;
+    rr:class owl:NamedIndividual
+  ];
+ rr:predicateObjectMap [
+  rr:predicate rdf:type;
+  rr:objectMap [
+    rr:constant x3do:head
+  ]
+];
+rr:predicateObjectMap [
+  rr:predicate  x3do:hasParent;
+  rr:objectMap [
+    rr:constant :X3D
+  ]
+].
+
+rules:metaMap a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/head/meta"
+  ]; 
+ rr:subjectMap [
+    rr:template :head
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasMeta;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:metaMap2 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/head/meta"
+  ];
+ rr:subjectMap [
+  rr:template "http://example.org/{@id}";
+  rr:class owl:NamedIndividual
+];
+ rr:predicateObjectMap [
+  rr:predicate rdf:type;
+  rr:objectMap [
+   rr:constant x3do:meta
+ ]
+];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasParent;
+  rr:objectMap [
+    rr:constant :head
+  ]
+];
+ rr:predicateObjectMap [
+  rr:predicate x3do:name;
+  rr:objectMap [
+    rml:reference "@name"
+  ]
+];
+ rr:predicateObjectMap [
+  rr:predicate x3do:content;
+  rr:objectMap [
+    rml:reference "@content"
+  ]
+].
+rules:metaMap3 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/head/meta[@name='title']"
+  ]; 
+ rr:subjectMap [
+    rr:template :meta
+  ];
+ rr:predicateObjectMap [
+  rr:predicate dcterms:title;
+  rr:objectMap [
+    rml:reference "@content"
+  ]
+].
+rules:metaMap4 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/head/meta[@name='description']"
+  ]; 
+ rr:subjectMap [
+    rr:template :meta
+  ];
+ rr:predicateObjectMap [
+  rr:predicate dcterms:description;
+  rr:objectMap [
+    rml:reference "@content"
+  ]
+].
+rules:metaMap5 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/head/meta[@name='created']"
+  ]; 
+ rr:subjectMap [
+    rr:template :meta
+  ];
+ rr:predicateObjectMap [
+  rr:predicate dcterms:created;
+  rr:objectMap [
+    rml:reference "@content"
+  ]
+].
+rules:metaMap6 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/head/meta[@name='modified']"
+  ]; 
+ rr:subjectMap [
+    rr:template :meta
+  ];
+ rr:predicateObjectMap [
+  rr:predicate dcterms:modified;
+  rr:objectMap [
+    rml:reference "@content"
+  ]
+].
+rules:metaMap7 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/head/meta[@name='creator']"
+  ]; 
+ rr:subjectMap [
+    rr:template :meta
+  ];
+ rr:predicateObjectMap [
+  rr:predicate dcterms:creator;
+  rr:objectMap [
+    rml:reference "@content"
+  ]
+].
+rules:metaMap8 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/head/meta[@name='Image']"
+  ]; 
+ rr:subjectMap [
+    rr:template :meta
+  ];
+ rr:predicateObjectMap [
+  rr:predicate dcterms:Image;
+  rr:objectMap [
+    rml:reference "@content"
+  ]
+].
+rules:metaMap9 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/head/meta[@name='reference']"
+  ]; 
+ rr:subjectMap [
+    rr:template :meta
+  ];
+ rr:predicateObjectMap [
+  rr:predicate dcterms:reference;
+  rr:objectMap [
+    rml:reference "@content"
+  ]
+].
+rules:metaMap10 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/head/meta[@name='license']"
+  ]; 
+ rr:subjectMap [
+    rr:template :meta
+  ];
+ rr:predicateObjectMap [
+  rr:predicate dcterms:license;
+  rr:objectMap [
+    rml:reference "@content"
+  ]
+].
+rules:metaMap11 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/head/meta[@name='identifier']"
+  ]; 
+ rr:subjectMap [
+    rr:template :meta
+  ];
+ rr:predicateObjectMap [
+  rr:predicate dcterms:identifier;
+  rr:objectMap [
+    rml:reference "@content"
+  ]
+].
+rules:metaMap12 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/head/meta[@name='generator']"
+  ]; 
+ rr:subjectMap [
+    rr:template :meta
+  ];
+ rr:predicateObjectMap [
+  rr:predicate dcterms:generator;
+  rr:objectMap [
+    rml:reference "@content"
+  ]
+].
+
+rules:SceneMap a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene"
+  ];
+rr:subjectMap [
+    rr:template :Scene;
+    rr:class owl:NamedIndividual
+  ];
+ rr:predicateObjectMap [
+  rr:predicate rdf:type;
+  rr:objectMap [
+    rr:constant x3do:Scene
+  ]
+];
+rr:predicateObjectMap [
+  rr:predicate  x3do:hasParent;
+  rr:objectMap [
+    rr:constant :X3D
+  ]
+].
+
+rules:SceneMap2 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/WorldInfo"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+rules:SceneMap3 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/Background"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+rules:SceneMap4 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/ Group"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:WorldInfoMap a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/WorldInfo"
+  ];
+ rr:subjectMap [
+  rr:template "http://example.org/{@id}";
+  rr:class owl:NamedIndividual
+];
+ rr:predicateObjectMap [
+  rr:predicate rdf:type;
+  rr:objectMap [
+   rr:constant x3do:WorldInfo
+ ]
+];
+rr:predicateObjectMap [
+  rr:predicate x3do:hasParent;
+  rr:objectMap [
+    rr:constant :Scene
+  ]
+];
+rr:predicateObjectMap [
+  rr:predicate x3do:title;
+  rr:objectMap [
+    rml:reference "@title"
+  ]
+].
+
+rules:BackgroundMap a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/Background"
+  ];
+ rr:subjectMap [
+  rr:template "http://example.org/{@id}";
+  rr:class owl:NamedIndividual
+];
+ rr:predicateObjectMap [
+  rr:predicate rdf:type;
+  rr:objectMap [
+   rr:constant x3do:Background
+ ]
+];
+rr:predicateObjectMap [
+  rr:predicate x3do:hasParent;
+  rr:objectMap [
+    rr:constant :Scene
+  ]
+];
+rr:predicateObjectMap [
+  rr:predicate x3do:skyColor;
+  rr:objectMap [
+    rml:reference "@skyColor"
+  ]
+].
+
+rules:GroupMap a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/Group"
+  ];
+rr:subjectMap [
+  rr:template "http://example.org/{@id}";
+  rr:class owl:NamedIndividual
+];
+ rr:predicateObjectMap [
+  rr:predicate rdf:type;
+  rr:objectMap [
+    rr:constant x3do:Group
+  ]
+];
+rr:predicateObjectMap [
+  rr:predicate  x3do:hasParent;
+  rr:objectMap [
+    rr:constant :Scene
+  ]
+].
+
+rules:GroupMap2 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/Group/Viewpoint"
+  ]; 
+  rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+rules:GroupMap3 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/Group/Transform"
+  ]; 
+  rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:ViewpointMap a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/Group/Viewpoint"
+  ];
+ rr:subjectMap [
+  rr:template "http://example.org/{@id}";
+  rr:class owl:NamedIndividual
+];
+ rr:predicateObjectMap [
+  rr:predicate rdf:type;
+  rr:objectMap [
+   rr:constant x3do:Viewpoint
+ ]
+];
+rr:predicateObjectMap [
+  rr:predicate x3do:hasParent;
+  rr:objectMap [
+    rr:template "http://example.org/{../@id}"
+  ]
+];
+rr:predicateObjectMap [
+  rr:predicate x3do:DEF;
+  rr:objectMap [
+    rml:reference "@DEF"
+  ]
+];
+ rr:predicateObjectMap [
+  rr:predicate x3do:centerOfRotation;
+  rr:objectMap [
+    rml:reference "@centerOfRotation"
+  ]
+];
+rr:predicateObjectMap [
+  rr:predicate x3do:description;
+  rr:objectMap [
+    rml:reference "@description"
+  ]
+];
+ rr:predicateObjectMap [
+  rr:predicate x3do:position;
+  rr:objectMap [
+    rml:reference "@position"
+  ]
+].
+rules:TransformMap a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/Group/Transform"
+  ];
+ rr:subjectMap [
+  rr:template "http://example.org/{@id}";
+  rr:class owl:NamedIndividual
+];
+ rr:predicateObjectMap [
+  rr:predicate rdf:type;
+  rr:objectMap [
+   rr:constant x3do:Transform
+ ]
+];
+rr:predicateObjectMap [
+  rr:predicate x3do:hasParent;
+  rr:objectMap [
+    rr:template "http://example.org/{../@id}"
+  ]
+];
+rr:predicateObjectMap [
+  rr:predicate x3do:DEF;
+  rr:objectMap [
+    rml:reference "@DEF"
+  ]
+];
+ rr:predicateObjectMap [
+  rr:predicate x3do:rotation;
+  rr:objectMap [
+    rml:reference "@rotation"
+  ]
+];
+rr:predicateObjectMap [
+  rr:predicate x3do:translation;
+  rr:objectMap [
+    rml:reference "@translation"
+  ]
+].
+
+rules:TransformMap2 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/Group/Transform/Shape"
+  ]; 
+  rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:ShapeMap a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/Group/Transform/Shape"
+  ];
+ rr:subjectMap [
+  rr:template "http://example.org/{@id}";
+  rr:class owl:NamedIndividual
+];
+ rr:predicateObjectMap [
+  rr:predicate rdf:type;
+  rr:objectMap [
+   rr:constant x3do:Shape
+ ]
+];
+rr:predicateObjectMap [
+  rr:predicate x3do:hasParent;
+  rr:objectMap [
+    rr:template "http://example.org/{../@id}"
+  ]
+].
+rules:ShapeMap2 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/Group/Transform/Shape/Sphere"
+  ]; 
+  rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasGeometry;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+rules:ShapeMap3 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/Group/Transform/Shape/Text"
+  ]; 
+  rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasGeometry;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+rules:ShapeMap4 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/Group/Transform/Shape/Appearance"
+  ]; 
+  rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasAppearance;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SphereMap a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/Group/Transform/Shape/Sphere"
+  ];
+ rr:subjectMap [
+  rr:template "http://example.org/{@id}";
+  rr:class owl:NamedIndividual
+];
+ rr:predicateObjectMap [
+  rr:predicate rdf:type;
+  rr:objectMap [
+   rr:constant x3do:Sphere
+ ]
+];
+rr:predicateObjectMap [
+  rr:predicate x3do:hasParent;
+  rr:objectMap [
+    rr:template "http://example.org/{../@id}"
+  ]
+].
+rules:AppearanceMap a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/Group/Transform/Shape/Appearance"
+  ];
+ rr:subjectMap [
+  rr:template "http://example.org/{@id}";
+  rr:class owl:NamedIndividual
+];
+ rr:predicateObjectMap [
+  rr:predicate rdf:type;
+  rr:objectMap [
+   rr:constant x3do:Appearance
+ ]
+];
+rr:predicateObjectMap [
+  rr:predicate x3do:hasParent;
+  rr:objectMap [
+    rr:template "http://example.org/{../@id}"
+  ]
+].
+rules:AppearanceMap2 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/Group/Transform/Shape/Appearance/Material"
+  ]; 
+  rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasMaterial;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+rules:AppearanceMap3 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/Group/Transform/Shape/Appearance/ImageTexture"
+  ]; 
+  rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasTexture;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+rules:MaterialMap a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/Group/Transform/Shape/Appearance/Material"
+  ];
+ rr:subjectMap [
+  rr:template "http://example.org/{@id}";
+  rr:class owl:NamedIndividual
+];
+ rr:predicateObjectMap [
+  rr:predicate rdf:type;
+  rr:objectMap [
+   rr:constant x3do:Material
+ ]
+];
+rr:predicateObjectMap [
+  rr:predicate x3do:hasParent;
+  rr:objectMap [
+    rr:template "http://example.org/{../@id}"
+  ]
+];
+rr:predicateObjectMap [
+  rr:predicate x3do:DEF;
+  rr:objectMap [
+    rml:reference "@DEF"
+  ]
+];
+rr:predicateObjectMap [
+  rr:predicate x3do:diffuseColor;
+  rr:objectMap [
+    rml:reference "@diffuseColor"
+  ]
+];
+rr:predicateObjectMap [
+  rr:predicate x3do:USE;
+  rr:objectMap [
+    rml:reference "@USE"
+  ]
+].
+
+rules:ImageTextureMap a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/Group/Transform/Shape/Appearance/ImageTexture"
+  ];
+ rr:subjectMap [
+  rr:template "http://example.org/{@id}";
+  rr:class owl:NamedIndividual
+];
+ rr:predicateObjectMap [
+  rr:predicate rdf:type;
+  rr:objectMap [
+   rr:constant x3do:ImageTexture
+ ]
+];
+rr:predicateObjectMap [
+  rr:predicate x3do:hasParent;
+  rr:objectMap [
+    rr:template "http://example.org/{../@id}"
+  ]
+];
+rr:predicateObjectMap [
+  rr:predicate x3do:DEF;
+  rr:objectMap [
+    rml:reference "@DEF"
+  ]
+];
+rr:predicateObjectMap [
+  rr:predicate x3do:url;
+  rr:objectMap [
+    rml:reference "@url"
+  ]
+].
+
+rules:TextMap a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/Group/Transform/Shape/Text"
+  ];
+ rr:subjectMap [
+  rr:template "http://example.org/{@id}";
+  rr:class owl:NamedIndividual
+];
+ rr:predicateObjectMap [
+  rr:predicate rdf:type;
+  rr:objectMap [
+   rr:constant x3do:Text
+ ]
+];
+rr:predicateObjectMap [
+  rr:predicate x3do:hasParent;
+  rr:objectMap [
+    rr:template "http://example.org/{../@id}"
+  ]
+];
+rr:predicateObjectMap [
+  rr:predicate x3do:DEF;
+  rr:objectMap [
+    rml:reference "@DEF"
+  ]
+];
+rr:predicateObjectMap [
+  rr:predicate x3do:string;
+  rr:objectMap [
+    rml:reference "@string"
+  ]
+].
+rules:TextMap2 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/Group/Transform/Shape/Text/FontStyle"
+  ]; 
+  rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasFontStyle;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:FontStyleMap a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/Group/Transform/Shape/Text/FontStyle"
+  ];
+ rr:subjectMap [
+  rr:template "http://example.org/{@id}";
+  rr:class owl:NamedIndividual
+];
+ rr:predicateObjectMap [
+  rr:predicate rdf:type;
+  rr:objectMap [
+   rr:constant x3do:FontStyle
+ ]
+];
+rr:predicateObjectMap [
+  rr:predicate x3do:hasParent;
+  rr:objectMap [
+    rr:template "http://example.org/{../@id}"
+  ]
+];
+rr:predicateObjectMap [
+  rr:predicate x3do:justify;
+  rr:objectMap [
+    rml:reference "@justify"
+  ]
+].
+

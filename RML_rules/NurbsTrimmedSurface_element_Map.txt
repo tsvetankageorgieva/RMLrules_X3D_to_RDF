@@ -1,0 +1,339 @@
+@prefix : <http://example.org/> .
+@prefix rules: <http://example.org/rules/> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix x3do: <https://www.web3d.org/specifications/X3dOntology4.0#> .
+@prefix x3d: <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+rules:XvlShellMap a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//XvlShell"
+  ];
+ rr:subjectMap [
+  rr:template "http://example.org/{@id}";
+  rr:class owl:NamedIndividual
+ ];
+ rr:predicateObjectMap [
+  rr:predicate rdf:type;
+  rr:objectMap [
+    rr:constant x3do:XvlShell
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate  x3do:hasParent;
+  rr:objectMap [
+    rr:template "http://example.org/{../@id}"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:shellType;
+  rr:objectMap [
+    rml:reference "@shellType"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:numberOfDivisions;
+  rr:objectMap [
+    rml:reference "@numberOfDivisions"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:vertexRound;
+  rr:objectMap [
+    rml:reference "@vertexRound"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:edgeBeginCoordIndex;
+  rr:objectMap [
+    rml:reference "@edgeBeginCoordIndex"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:edgeEndCoordIndex;
+  rr:objectMap [
+    rml:reference "@edgeEndCoordIndex"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:edgeRound;
+  rr:objectMap [
+    rml:reference "@edgeRound"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:edgeBeginVector;
+  rr:objectMap [
+    rml:reference "@edgeBeginVector"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:edgeEndVector;
+  rr:objectMap [
+    rml:reference "@edgeEndVector"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:faceCoordIndex;
+  rr:objectMap [
+    rml:reference "@faceCoordIndex"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:faceTexCoordIndex;
+  rr:objectMap [
+    rml:reference "@faceTexCoordIndex"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:faceEmpty;
+  rr:objectMap [
+    rml:reference "@faceEmpty"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:faceHidden;
+  rr:objectMap [
+    rml:reference "@faceHidden"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:containerField;
+  rr:objectMap [
+    rml:reference "@containerField"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:class;
+  rr:objectMap [
+    rml:reference "@class"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:DEF;
+  rr:objectMap [
+    rml:reference "@DEF"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:USE;
+  rr:objectMap [
+    rml:reference "@USE"
+  ]
+].
+
+rules:XvlShellMap2 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//XvlShell/IS"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasIS;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:XvlShellMap3 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//XvlShell/MetadataDouble"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasMetadata;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:XvlShellMap4 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//XvlShell/MetadataFloat"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasMetadata;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:XvlShellMap5 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//XvlShell/MetadataInteger"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasMetadata;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:XvlShellMap6 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//XvlShell/MetadataSet"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasMetadata;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:XvlShellMap7 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//XvlShell/MetadataString"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasMetadata;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:XvlShellMap8 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//XvlShell/ProtoInstance"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasMetadata;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:XvlShellMap9 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//XvlShell/GeoCoordinate"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasCoord;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:XvlShellMap10 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//XvlShell/Coordinate"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasCoord;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:XvlShellMap11 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//XvlShell/CoordinateDouble"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasCoord;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:XvlShellMap12 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//XvlShell/TextureCoordinate"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:texCoord;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:XvlShellMap13 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//XvlShell/TextureCoordinateGenerator"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:texCoord;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:XvlShellMap14 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//XvlShell/MultiTextureCoordinate"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:texCoord;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].

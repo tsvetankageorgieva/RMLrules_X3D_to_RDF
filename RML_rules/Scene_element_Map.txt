@@ -1,0 +1,1251 @@
+@prefix : <http://example.org/> .
+@prefix rules: <http://example.org/rules/> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix x3do: <https://www.web3d.org/specifications/X3dOntology4.0#> .
+@prefix x3d: <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+rules:SceneMap a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene"
+  ];
+rr:subjectMap [
+    rr:template :Scene;
+    rr:class owl:NamedIndividual
+  ];
+ rr:predicateObjectMap [
+  rr:predicate rdf:type;
+  rr:objectMap [
+    rr:constant x3do:Scene
+  ]
+];
+rr:predicateObjectMap [
+  rr:predicate  x3do:hasParent;
+  rr:objectMap [
+    rr:constant :X3D
+  ]
+].
+
+rules:SceneMap2 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/WorldInfo"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap3 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/Background"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap4 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/Group"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap5 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/MetadataDouble"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap6 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/MetadataFloat"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap7 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/MetadataInteger"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap8 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/MetadataSet"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap9 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/MetadataString"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap10 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/ProtoInstance"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap11 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/GeoPositionInterpolator"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap12 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/GeoTouchSensor"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap13 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/HAnimDisplacer"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap14 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/NurbsPositionInterpolator"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap15 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/NurbsOrientationInterpolator"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap16 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/NurbsSurfaceInterpolator"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap17 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/BooleanFilter"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap18 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/BooleanSequencer"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap19 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/BooleanToggle"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap20 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/BooleanTrigger"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap21 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/IntegerSequencer"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap22 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/IntegerTrigger"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap23 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/TimeTrigger"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap24 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/ColorInterpolator"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap25 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/CoordinateInterpolator"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap26 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/CoordinateInterpolator2D"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap27 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/CylinderSensor"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap28 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/KeySensor"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap29 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/LoadSensor"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap30 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/NormalInterpolator"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap31 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/OrientationInterpolator"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap32 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/PlaneSensor"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap33 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/PositionInterpolator"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap34 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/PositionInterpolator2D"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap35 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/ProximitySensor"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap36 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/ScalarInterpolator"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap37 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/Script"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap38 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/SphereSensor"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap39 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/StringSensor"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap40 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/TimeSensor"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap41 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/TouchSensor"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap42 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/VisibilitySensor"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap43 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/GeoViewpoint"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap44 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/Fog"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap45 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/NavigationInfo"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap46 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/TextureBackground"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap47 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/Viewpoint"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap48 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/EspduTransform"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap49 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/SignalPdu"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap50 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/ReceiverPdu"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap51 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/TransmitterPdu"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap52 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/GeoLocation"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap53 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/GeoLOD"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap54 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/HAnimJoint"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap55 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/HAnimSegment"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap56 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/HAnimSite"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap57 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/HAnimHumanoid"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap58 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/Anchor"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap59 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/Billboard"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap60 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/Collision"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap61 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/Inline"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap62 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/LOD"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap63 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/StaticGroup"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap64 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/Switch"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap65 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/Transform"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap66 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/DirectionalLight"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap67 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/SpotLight"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap68 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/PointLight"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap69 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/Shape"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap70 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/Sound"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap71 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/GeoMetadata"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap72 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/ProtoDeclare"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap73 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/ExternProtoDeclare"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap74 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/ROUTE"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap75 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/EXPORT"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap76 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/IMPORT"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap77 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Scene/ProtoInstance"
+  ]; 
+ rr:subjectMap [
+    rr:template :Scene
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].

@@ -1,0 +1,1343 @@
+@prefix : <http://example.org/> .
+@prefix rules: <http://example.org/rules/> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix x3do: <https://www.web3d.org/specifications/X3dOntology4.0#> .
+@prefix x3d: <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+rules:HAnimSegmentMap a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment"
+  ];
+ rr:subjectMap [
+  rr:template "http://example.org/{@id}";
+  rr:class owl:NamedIndividual
+ ];
+ rr:predicateObjectMap [
+  rr:predicate rdf:type;
+  rr:objectMap [
+    rr:constant x3do:HAnimSegment
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate  x3do:hasParent;
+  rr:objectMap [
+    rr:template "http://example.org/{../@id}"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:name;
+  rr:objectMap [
+    rml:reference "@name"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:mass;
+  rr:objectMap [
+    rml:reference "@mass"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:centerOfMass;
+  rr:objectMap [
+    rml:reference "@centerOfMass"
+  ]
+ ]; 
+ rr:predicateObjectMap [
+  rr:predicate x3do:momentsOfInertia;
+  rr:objectMap [
+    rml:reference "@momentsOfInertia"
+  ]
+ ]; 
+ rr:predicateObjectMap [
+  rr:predicate x3do:bboxCentera;
+  rr:objectMap [
+    rml:reference "@bboxCenter"
+  ]
+ ]; 
+ rr:predicateObjectMap [
+  rr:predicate x3do:bboxSize;
+  rr:objectMap [
+    rml:reference "@bboxSize"
+  ]
+ ]; 
+ rr:predicateObjectMap [
+  rr:predicate x3do:containerField;
+  rr:objectMap [
+    rml:reference "@containerField"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:class;
+  rr:objectMap [
+    rml:reference "@class"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:DEF;
+  rr:objectMap [
+    rml:reference "@DEF"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:USE;
+  rr:objectMap [
+    rml:reference "@USE"
+  ]
+].
+
+rules:HAnimSegmentMap2 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/IS"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasIS;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap3 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/MetadataDouble"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasMetadata;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap4 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/MetadataFloat"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasMetadata;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap5 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/MetadataInteger"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasMetadata;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap6 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/MetadataSet"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasMetadata;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap7 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/MetadataString"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasMetadata;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap8 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/ProtoInstance"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasMetadata;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap9 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/Viewpoint"
+  ]; 
+  rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap10 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/Transform"
+  ]; 
+  rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap11 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/WorldInfo"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap12 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/Background"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap13 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/GeoPositionInterpolator"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap14 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/GeoTouchSensor"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap15 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/HAnimDisplacer"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap16 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/NurbsPositionInterpolator"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap17 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/NurbsOrientationInterpolator"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap18 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/NurbsSurfaceInterpolator"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap19 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/BooleanFilter"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap20 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/BooleanSequencer"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap21 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/BooleanToggle"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap22 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/BooleanTrigger"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap23 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/IntegerSequencer"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap24 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/IntegerTrigger"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap25 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/TimeTrigger"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap26 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/ColorInterpolator"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap27 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/CoordinateInterpolator"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap28 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/CoordinateInterpolator2D"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap29 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/CylinderSensor"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap30 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/KeySensor"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap31 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/LoadSensor"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap32 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/NormalInterpolator"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap33 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/OrientationInterpolator"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap34 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/PlaneSensor"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap35 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/PositionInterpolator"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap36 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/PositionInterpolator2D"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap37 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/ProximitySensor"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap38 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/ScalarInterpolator"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap39 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/Script"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap40 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/SphereSensor"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap41 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/StringSensor"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap42 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/TimeSensor"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap43 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/TouchSensor"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap44 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/VisibilitySensor"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap45 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/GeoViewpoint"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap46 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/Fog"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap47 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/NavigationInfo"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap48 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/TextureBackground"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap49 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/EspduTransform"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap50 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/SignalPdu"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap51 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/ReceiverPdu"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap52 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/TransmitterPdu"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap53 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/GeoLocation"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap54 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/GeoLOD"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap55 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/HAnimJoint"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap56 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/HAnimSegment"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasSegments;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap57 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/HAnimSite"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap58 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/HAnimHumanoid"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap59 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/Anchor"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap60 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/Group"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap61 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/Collision"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SceneMap62 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/Inline"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap63 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/LOD"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap64 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/StaticHAnimSegment"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap65 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/Switch"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap66 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/DirectionalLight"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap67 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/SpotLight"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap68 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/PointLight"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap69 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/Shape"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap70 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/Sound"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap71 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/GeoMetadata"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap72 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/ProtoDeclare"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap73 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/ExternProtoDeclare"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap74 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/ROUTE"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap75 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/EXPORT"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap76 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/IMPORT"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap77 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/ProtoInstance"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+];
+
+rules:HAnimSegmentMap78 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/HAnimSegment"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:HAnimSegmentMap79 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//HAnimSegment/Coordinate"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasCoord;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].

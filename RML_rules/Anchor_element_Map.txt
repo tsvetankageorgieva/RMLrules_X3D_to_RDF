@@ -1,0 +1,1273 @@
+@prefix : <http://example.org/> .
+@prefix rules: <http://example.org/rules/> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix x3do: <https://www.web3d.org/specifications/X3dOntology4.0#> .
+@prefix x3d: <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+rules:AnchorMap a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//Anchor"
+  ];
+ rr:subjectMap [
+  rr:template "http://example.org/{@id}";
+  rr:class owl:NamedIndividual
+ ];
+ rr:predicateObjectMap [
+  rr:predicate rdf:type;
+  rr:objectMap [
+   rr:constant x3do:Anchor
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasParent;
+  rr:objectMap [
+    rr:template "http://example.org/{../@id}"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:description;
+  rr:objectMap [
+    rml:reference "@description"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:parameter;
+  rr:objectMap [
+    rml:reference "@parameter"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:url;
+  rr:objectMap [
+    rml:reference "@url"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:bboxCenter;
+  rr:objectMap [
+    rml:reference "@bboxCenter"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:bboxSize;
+  rr:objectMap [
+    rml:reference "@bboxSize"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:containerField;
+  rr:objectMap [
+    rml:reference "@containerField"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:class;
+  rr:objectMap [
+    rml:reference "@class"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:DEF;
+  rr:objectMap [
+    rml:reference "@DEF"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:USE;
+  rr:objectMap [
+    rml:reference "@USE"
+  ]
+].
+
+rules:AnchorMap2 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//Anchor/IS"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasIS;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap3 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//Anchor/MetadataDouble"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasMetadata;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap4 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//Anchor/MetadataFloat"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasMetadata;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap5 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//Anchor/MetadataInteger"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasMetadata;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap6 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//Anchor/MetadataSet"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasMetadata;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap7 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//Anchor/MetadataString"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasMetadata;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap8 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//Anchor/ProtoInstance"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasMetadata;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap9 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/GeoPositionInterpolator"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap10 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/GeoTouchSensor"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap11 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/HAnimDisplacer"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap12 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/NurbsPositionInterpolator"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap13 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/NurbsOrientationInterpolator"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap14 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/NurbsSurfaceInterpolator"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap15 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/BooleanFilter"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap16 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/BooleanSequencer"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap17 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/BooleanToggle"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap18 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/BooleanTrigger"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap19 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/IntegerSequencer"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap20 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/IntegerTrigger"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap21 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/TimeTrigger"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap22 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/ColorInterpolator"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap23 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/CoordinateInterpolator"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap24 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/CoordinateInterpolator2D"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap25 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/CylinderSensor"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap26 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/KeySensor"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap27 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/LoadSensor"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap28 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/NormalInterpolator"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap29 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/OrientationInterpolator"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap30 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/PlaneSensor"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap31 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/PositionInterpolator"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap32 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/PositionInterpolator2D"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap33 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/ProximitySensor"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap34 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/ScalarInterpolator"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap35 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/Script"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap36 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/SphereSensor"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap37 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/StringSensor"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap38 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/TimeSensor"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap39 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/TouchSensor"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap40 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/VisibilitySensor"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap41 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/GeoViewpoint"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap42 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/Fog"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap43 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/NavigationInfo"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap44 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/TextureBackground"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap45 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/Viewpoint"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap46 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/EspduTransform"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap47 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/SignalPdu"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap48 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/ReceiverPdu"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap49 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/TransmitterPdu"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap50 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/GeoLocation"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap51 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/GeoLOD"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap52 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/HAnimJoint"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap53 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/HAnimSegment"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap54 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/HAnimSite"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap55 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/HAnimHumanoid"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap56 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/Anchor"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap57 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/Billboard"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap58 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/Collision"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap59 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/Inline"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap60 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/LOD"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap61 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/StaticGroup"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap62 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/Switch"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap63 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/Transform"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap64 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/DirectionalLight"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap65 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/SpotLight"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap66 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/PointLight"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap67 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/Shape"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap68 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/Sound"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap69 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/GeoMetadata"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap70 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/ProtoDeclare"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap71 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/ExternProtoDeclare"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap72 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/ROUTE"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap73 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/EXPORT"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap74 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/IMPORT"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:AnchorMap75 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/Anchor/ProtoInstance"
+  ]; 
+ rr:subjectMap [
+    rr:template :Anchor
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasChildren;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].

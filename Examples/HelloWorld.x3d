@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<X3D profile='Immersive' version='3.3' 
+     xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance'
+     xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd'>
+<head>
+ <meta id="meta_1" name='title' content='HelloWorld.x3d'/>
+ <meta id="meta_2" name='description' content='Simple X3D scene example: Hello World!'/>
+ <meta id="meta_3" name='created' content='30 October 2000'/>
+ <meta id="meta_4" name='modified' content='18 November 2019'/>
+ <meta id="meta_5" name='creator' content='Don Brutzman'/>
+ <meta id="meta_6" name='Image' content='HelloWorld.tall.png'/>
+ <meta id="meta_7" name='reference' content=' http://en.wikipedia.org/wiki/Hello_world '/>
+ <meta id="meta_8" name='reference' content=' https://en.wikipedia.org/wiki/Hello#.22Hello.2C_World.22_computer_program '/>
+ <meta id="meta_9" name='reference' content=' "https://en.wikipedia.org/wiki/Hello,_World!_program" '/>
+ <meta id="meta_10" name='reference' content=' http://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world '/>
+ <meta id="meta_11" name='reference' content=' http://www.HelloWorldExample.net '/>
+ <meta id="meta_12" name='reference' content=' http://www.web3D.org '/>
+ <meta id="meta_13" name='reference' content=' https://www.web3d.org/realtime-3d/news/internationalization-x3d '/>
+ <meta id="meta_14" name='reference' content=' https://www.web3d.org/x3d/content/examples/HelloWorld.x3d '/>
+ <meta id="meta_15" name='reference' content=' https://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes '/>
+ <meta id="meta_16" name='identifier' content=' https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01TechnicalOverview/HelloWorld.x3d '/>
+ <meta id="meta_17" name='license' content=' https://www.web3d.org/x3d/content/examples/license.html '/>
+ <meta id="meta_18" name='generator' content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit'/>
+ <meta id="meta_19" name='reference' content='HelloWorld.wrl'/>
+ <meta id="meta_20" name='reference' content='HelloWorld.x3dv'/>
+ <meta id="meta_21" name='reference' content='HelloWorld.x3db'/>
+ <meta id="meta_22" name='reference' content='HelloWorld.xhtml'/>
+ <meta id="meta_23" name='reference' content='HelloWorld.json'/>
+</head>
+
+<Scene id="scene_1">
+  <!-- Example scene to illustrate X3D nodes and fields (XML elements and attributes) -->
+  <WorldInfo id="WorldInfo_1" title='Hello World!'/>
+   <Background id="Background_1" skyColor='0.2 0.2 0.6'/>
+    <Group id="Group_1">
+     <Viewpoint id="Viewpoint_1" DEF='ViewUpClose' centerOfRotation='0 -1 0' description='Hello world!' position='0 -1 7'/>
+      <!-- conversion test case with illegal syntax: 0, 1, 0, 3 i.e. insert commas in order to test removal when converted to ttl -->
+      <Transform id="Transform_1" DEF='TestWhitespaceCommas' rotation='0 1 0 3'>
+       <Shape id="Shape_1">
+        <Sphere id="Sphere_1" />
+        <Appearance id="Appearance_1">
+          <Material id="Material_1" DEF='MaterialLightBlue' diffuseColor='0.1 0.5 1'/>
+          <ImageTexture id="ImageTexture_1" DEF='ImageCloudlessEarth'
+              url=' "earth-topo.png" "earth-topo.jpg" "earth-topo-small.gif" "https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png" "https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg" "https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif" '/>
+        </Appearance>
+    </Shape>
+   </Transform>
+   <Transform id="Transform_2" translation='0 -2 0'>
+    <Shape id="Shape_2">
+     <Text id="Text_1" DEF='TextMessage' string='"Hello" "world!"'>
+      <FontStyle id="FontStyle_1" justify='"MIDDLE" "MIDDLE"'/>
+     </Text>
+   <Appearance id="Appearance_2">
+    <Material id="Material_2" USE='MaterialLightBlue'/>
+    </Appearance>
+  </Shape>
+  </Transform>
+ </Group>
+ </Scene>
+</X3D>

@@ -1,0 +1,8 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX x3do: <https://www.web3d.org/specifications/X3dOntology4.0#>
+
+SELECT  ?element_id ?parent_id  ?parent_type
+WHERE { ?element_id rdf:type x3do:Appearance  ;
+                    x3do:hasParent  ?parent_id .     
+        ?parent_id rdf:type ?parent_type . 
+FILTER (?parent_type != owl:NamedIndividual ) . }

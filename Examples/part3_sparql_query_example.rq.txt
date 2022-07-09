@@ -1,0 +1,12 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX x3do: <https://www.web3d.org/specifications/X3dOntology4.0#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#> 
+
+SELECT  ?element_id ?property_name 
+        ?child_element_id  ?child_element_type
+WHERE { ?element_id  rdf:type x3do:Shape  ;
+                     ?property_name  ?child_element_id .         
+        ?child_element_id  rdf:type ?child_element_type .
+FILTER (?property_name != x3do:hasParent && 
+       REGEX(STR(?property_name ), "has" )   && 
+       ?child_element_type != owl:NamedIndividual ) . }

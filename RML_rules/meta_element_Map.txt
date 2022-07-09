@@ -1,0 +1,510 @@
+@prefix : <http://example.org/> .
+@prefix rules: <http://example.org/rules/> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix x3do: <https://www.web3d.org/specifications/X3dOntology4.0#> .
+@prefix x3d: <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+
+rules:metaMap a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/head/meta"
+  ]; 
+ rr:subjectMap [
+    rr:template :head
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasMeta;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:metaMap2 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/head/meta"
+  ];
+ rr:subjectMap [
+  rr:template "http://example.org/{@id}";
+  rr:class owl:NamedIndividual
+];
+ rr:predicateObjectMap [
+  rr:predicate rdf:type;
+  rr:objectMap [
+   rr:constant x3do:meta
+ ]
+];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasParent;
+  rr:objectMap [
+    rr:constant :head
+  ]
+];
+ rr:predicateObjectMap [
+  rr:predicate x3do:name;
+  rr:objectMap [
+    rml:reference "@name"
+  ]
+];
+ rr:predicateObjectMap [
+  rr:predicate x3do:content;
+  rr:objectMap [
+    rml:reference "@content"
+  ]
+];
+ rr:predicateObjectMap [
+  rr:predicate x3do:http-equiv;
+  rr:objectMap [
+    rml:reference "@http-equiv"
+  ]
+];
+ rr:predicateObjectMap [
+  rr:predicate x3do:scheme;
+  rr:objectMap [
+    rml:reference "@scheme"
+  ]
+];
+ rr:predicateObjectMap [
+  rr:predicate x3do:lang;
+  rr:objectMap [
+    rml:reference "@lang"
+  ]
+];
+ rr:predicateObjectMap [
+  rr:predicate x3do:dir;
+  rr:objectMap [
+    rml:reference "@xml:dir"
+  ]
+].
+rules:metaMap3 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/head/meta[@name='title']"
+  ]; 
+ rr:subjectMap [
+    rr:template :meta
+  ];
+ rr:predicateObjectMap [
+  rr:predicate dcterms:title;
+  rr:objectMap [
+    rml:reference "@content"
+  ]
+].
+rules:metaMap4 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/head/meta[@name='description']"
+  ]; 
+ rr:subjectMap [
+    rr:template :meta
+  ];
+ rr:predicateObjectMap [
+  rr:predicate dcterms:description;
+  rr:objectMap [
+    rml:reference "@content"
+  ]
+].
+rules:metaMap5 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/head/meta[@name='created']"
+  ]; 
+ rr:subjectMap [
+    rr:template :meta
+  ];
+ rr:predicateObjectMap [
+  rr:predicate dcterms:created;
+  rr:objectMap [
+    rml:reference "@content"
+  ]
+].
+rules:metaMap6 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/head/meta[@name='modified']"
+  ]; 
+ rr:subjectMap [
+    rr:template :meta
+  ];
+ rr:predicateObjectMap [
+  rr:predicate dcterms:modified;
+  rr:objectMap [
+    rml:reference "@content"
+  ]
+].
+rules:metaMap7 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/head/meta[@name='creator']"
+  ]; 
+ rr:subjectMap [
+    rr:template :meta
+  ];
+ rr:predicateObjectMap [
+  rr:predicate dcterms:creator;
+  rr:objectMap [
+    rml:reference "@content"
+  ]
+].
+rules:metaMap8 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/head/meta[@name='contributor']"
+  ]; 
+ rr:subjectMap [
+    rr:template :meta
+  ];
+ rr:predicateObjectMap [
+  rr:predicate dcterms:contributor;
+  rr:objectMap [
+    rml:reference "@content"
+  ]
+].
+rules:metaMap9 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/head/meta[@name='Image']"
+  ]; 
+ rr:subjectMap [
+    rr:template :meta
+  ];
+ rr:predicateObjectMap [
+  rr:predicate dcterms:Image;
+  rr:objectMap [
+    rml:reference "@content"
+  ]
+].
+rules:metaMap10 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/head/meta[@name='reference']"
+  ]; 
+ rr:subjectMap [
+    rr:template :meta
+  ];
+ rr:predicateObjectMap [
+  rr:predicate dcterms:reference;
+  rr:objectMap [
+    rml:reference "@content"
+  ]
+].
+rules:metaMap11 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/head/meta[@name='license']"
+  ]; 
+ rr:subjectMap [
+    rr:template :meta
+  ];
+ rr:predicateObjectMap [
+  rr:predicate dcterms:license;
+  rr:objectMap [
+    rml:reference "@content"
+  ]
+].
+rules:metaMap12 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/head/meta[@name='identifier']"
+  ]; 
+ rr:subjectMap [
+    rr:template :meta
+  ];
+ rr:predicateObjectMap [
+  rr:predicate dcterms:identifier;
+  rr:objectMap [
+    rml:reference "@content"
+  ]
+].
+rules:metaMap13 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/head/meta[@name='generator']"
+  ]; 
+ rr:subjectMap [
+    rr:template :meta
+  ];
+ rr:predicateObjectMap [
+  rr:predicate dcterms:generator;
+  rr:objectMap [
+    rml:reference "@content"
+  ]
+].
+rules:metaMap14 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/head/meta[@name='priorVersion']"
+  ]; 
+ rr:subjectMap [
+    rr:template :meta
+  ];
+ rr:predicateObjectMap [
+  rr:predicate owl:priorVersion;
+  rr:objectMap [
+    rml:reference "@content"
+  ]
+].
+rules:metaMap15 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/head/meta[@name='preferredNamespaceUri']"
+  ]; 
+ rr:subjectMap [
+    rr:template :meta
+  ];
+ rr:predicateObjectMap [
+  rr:predicate vann:preferredNamespaceUri;
+  rr:objectMap [
+    rml:reference "@content"
+  ]
+].
+rules:metaMap16 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/head/meta[@name='versionIRI']"
+  ]; 
+ rr:subjectMap [
+    rr:template :meta
+  ];
+ rr:predicateObjectMap [
+  rr:predicate owl:versionIRI;
+  rr:objectMap [
+    rml:reference "@content"
+  ]
+].
+rules:metaMap17 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/head/meta[@name='preferredNamespacePrefix']"
+  ]; 
+ rr:subjectMap [
+    rr:template :meta
+  ];
+ rr:predicateObjectMap [
+  rr:predicate vann:preferredNamespacePrefix;
+  rr:objectMap [
+    rml:reference "@content"
+  ]
+].
+rules:metaMap18 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/head/meta[@name='bibliographicCitation']"
+  ]; 
+ rr:subjectMap [
+    rr:template :meta
+  ];
+ rr:predicateObjectMap [
+  rr:predicate dcterms:bibliographicCitation;
+  rr:objectMap [
+    rml:reference "@content"
+  ]
+].
+rules:metaMap19 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/head/meta[@name='abstract']"
+  ]; 
+ rr:subjectMap [
+    rr:template :meta
+  ];
+ rr:predicateObjectMap [
+  rr:predicate dcterms:abstract;
+  rr:objectMap [
+    rml:reference "@content"
+  ]
+].
+rules:metaMap20 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/head/meta[@name='seeAlso']"
+  ]; 
+ rr:subjectMap [
+    rr:template :meta
+  ];
+ rr:predicateObjectMap [
+  rr:predicate rdfs:seeAlso;
+  rr:objectMap [
+    rml:reference "@content"
+  ]
+].
+rules:metaMap21 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/head/meta[@name='status']"
+  ]; 
+ rr:subjectMap [
+    rr:template :meta
+  ];
+ rr:predicateObjectMap [
+  rr:predicate sw:status;
+  rr:objectMap [
+    rml:reference "@content"
+  ]
+].
+rules:metaMap22 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/head/meta[@name='status']"
+  ]; 
+ rr:subjectMap [
+    rr:template :meta
+  ];
+ rr:predicateObjectMap [
+  rr:predicate sw:status;
+  rr:objectMap [
+    rml:reference "@content"
+  ]
+].
+rules:metaMap23 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/head/meta[@name='backwardCompatibility']"
+  ]; 
+ rr:subjectMap [
+    rr:template :meta
+  ];
+ rr:predicateObjectMap [
+  rr:predicate owl:backwardCompatibility;
+  rr:objectMap [
+    rml:reference "@content"
+  ]
+].
+rules:metaMap24 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/head/meta[@name='incompatibleWith']"
+  ]; 
+ rr:subjectMap [
+    rr:template :meta
+  ];
+ rr:predicateObjectMap [
+  rr:predicate owl:incompatibleWith;
+  rr:objectMap [
+    rml:reference "@content"
+  ]
+].
+rules:metaMap25 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/head/meta[@name='issued']"
+  ]; 
+ rr:subjectMap [
+    rr:template :meta
+  ];
+ rr:predicateObjectMap [
+  rr:predicate dcterms:issued;
+  rr:objectMap [
+    rml:reference "@content"
+  ]
+].
+rules:metaMap26 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/head/meta[@name='source']"
+  ]; 
+ rr:subjectMap [
+    rr:template :meta
+  ];
+ rr:predicateObjectMap [
+  rr:predicate dcterms:source;
+  rr:objectMap [
+    rml:reference "@content"
+  ]
+].
+rules:metaMap27 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/head/meta[@name='published']"
+  ]; 
+ rr:subjectMap [
+    rr:template :meta
+  ];
+ rr:predicateObjectMap [
+  rr:predicate dcterms:published;
+  rr:objectMap [
+    rml:reference "@content"
+  ]
+].
+rules:metaMap28 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/head/meta[@name='doi']"
+  ]; 
+ rr:subjectMap [
+    rr:template :meta
+  ];
+ rr:predicateObjectMap [
+  rr:predicate bibo:doi;
+  rr:objectMap [
+    rml:reference "@content"
+  ]
+].
+rules:metaMap29 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/head/meta[@name='logo']"
+  ]; 
+ rr:subjectMap [
+    rr:template :meta
+  ];
+ rr:predicateObjectMap [
+  rr:predicate foaf:logo;
+  rr:objectMap [
+    rml:reference "@content"
+  ]
+].
+rules:metaMap30 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D/head/meta[@name='depiction']"
+  ]; 
+ rr:subjectMap [
+    rr:template :meta
+  ];
+ rr:predicateObjectMap [
+  rr:predicate foaf:depiction;
+  rr:objectMap [
+    rml:reference "@content"
+  ]
+].

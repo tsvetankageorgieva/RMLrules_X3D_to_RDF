@@ -1,0 +1,19 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix rr: <http://www.w3.org/ns/r2rml#> 
+prefix : <http://example.org/>
+prefix rules: <http://example.org/rules/>
+prefix rml: <http://semweb.mmlab.be/ns/rml#>
+
+SELECT  ?s2 ?p2 ?i ?o1
+WHERE {?s rml:reference ""@name  .
+ ?s1 ?p1 ?s .
+ ?s2 ?p2 ?s1.
+ ?s2 rr:subjectMap ?o ;
+        rml:logicalSource ?l .
+ ?o rr:template ?o1 .
+ ?l rml:iterator ?i .
+
+   }

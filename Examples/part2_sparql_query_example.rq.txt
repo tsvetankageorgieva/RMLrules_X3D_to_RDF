@@ -1,0 +1,9 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX x3do: <https://www.web3d.org/specifications/X3dOntology4.0#>
+
+SELECT  ?element_id ?attribute_name ?attribute_value
+WHERE { ?element_id  rdf:type x3do:Text ;
+                     ?attribute_name ?attribute_value .         
+FILTER (?attribute_name != rdf:type && 
+        ?attribute_name != x3do:hasParent   && 
+       !REGEX(STR(?attribute_name), "has" ) ) . }

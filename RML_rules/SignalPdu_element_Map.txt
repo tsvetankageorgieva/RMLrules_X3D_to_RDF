@@ -1,0 +1,315 @@
+@prefix : <http://example.org/> .
+@prefix rules: <http://example.org/rules/> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix x3do: <https://www.web3d.org/specifications/X3dOntology4.0#> .
+@prefix x3d: <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+rules:SignalPduMap a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//SignalPdu"
+  ];
+ rr:subjectMap [
+  rr:template "http://example.org/{@id}";
+  rr:class owl:NamedIndividual
+ ];
+ rr:predicateObjectMap [
+  rr:predicate rdf:type;
+  rr:objectMap [
+   rr:constant x3do:SignalPdu
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasParent;
+  rr:objectMap [
+    rr:template "http://example.org/{../@id}"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:enabled;
+  rr:objectMap [
+    rml:reference "@enabled"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:whichGeometry;
+  rr:objectMap [
+    rml:reference "@whichGeometry"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:bboxCenter;
+  rr:objectMap [
+    rml:reference "@bboxCenter"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:bboxSize;
+  rr:objectMap [
+    rml:reference "@bboxSize"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:siteID;
+  rr:objectMap [
+    rml:reference "@siteID"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:applicationID;
+  rr:objectMap [
+    rml:reference "@applicationID"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:entityID;
+  rr:objectMap [
+    rml:reference "@entityID"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:readInterval;
+  rr:objectMap [
+    rml:reference "@readInterval"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:writeInterval;
+  rr:objectMap [
+    rml:reference "@writeInterval"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:networkMode;
+  rr:objectMap [
+    rml:reference "@networkMode"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:address;
+  rr:objectMap [
+    rml:reference "@address"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:port;
+  rr:objectMap [
+    rml:reference "@port"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:multicastRelayHost;
+  rr:objectMap [
+    rml:reference "@multicastRelayHost"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:multicastRelayPort;
+  rr:objectMap [
+    rml:reference "@multicastRelayPort"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:rtpHeaderExpected;
+  rr:objectMap [
+    rml:reference "@rtpHeaderExpected"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:radioID;
+  rr:objectMap [
+    rml:reference "@radioID"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:encodingScheme;
+  rr:objectMap [
+    rml:reference "@encodingScheme"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:tdlType;
+  rr:objectMap [
+    rml:reference "@tdlType"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:sampleRate;
+  rr:objectMap [
+    rml:reference "@sampleRate"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:samples;
+  rr:objectMap [
+    rml:reference "@samples"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:dataLength;
+  rr:objectMap [
+    rml:reference "@dataLength"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:data;
+  rr:objectMap [
+    rml:reference "@data"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:geoSystem;
+  rr:objectMap [
+    rml:reference "@geoSystem"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:geoCoords;
+  rr:objectMap [
+    rml:reference "@geoCoords"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:containerField;
+  rr:objectMap [
+    rml:reference "@containerField"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:class;
+  rr:objectMap [
+    rml:reference "@class"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:DEF;
+  rr:objectMap [
+    rml:reference "@DEF"
+  ]
+ ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:USE;
+  rr:objectMap [
+    rml:reference "@USE"
+  ]
+].
+
+rules:SignalPduMap2 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//SignalPdu/IS"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasIS;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SignalPduMap3 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//SignalPdu/MetadataDouble"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasMetadata;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SignalPduMap4 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//SignalPdu/MetadataFloat"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasMetadata;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SignalPduMap5 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//SignalPdu/MetadataInteger"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasMetadata;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SignalPduMap6 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//SignalPdu/MetadataSet"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasMetadata;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SignalPduMap7 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//SignalPdu/MetadataString"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasMetadata;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].
+
+rules:SignalPduMap8 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "//SignalPdu/ProtoInstance"
+  ]; 
+ rr:subjectMap [
+    rr:template "http://example.org/{../@id}";
+  ];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasMetadata;
+  rr:objectMap [
+    rr:template "http://example.org/{@id}"
+  ]
+].

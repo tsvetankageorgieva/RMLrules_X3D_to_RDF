@@ -1,0 +1,14 @@
+PREFIX rr: <http://www.w3.org/ns/r2rml#>
+PREFIX rml: <http://semweb.mmlab.be/ns/rml#>
+
+SELECT DISTINCT ?rule ?element 
+       ?subject ?predicate ?attribute
+WHERE {?rule rml:logicalSource ?i ;
+             rr:subjectMap  ?sm; 
+             rr:predicateObjectMap ?pm .
+       ?i rml:iterator ?element .
+       ?sm rr:template ?subject .
+       ?pm rr:objectMap ?o ;
+           rr:predicate ?predicate .
+       ?o rml:reference ?attribute . }
+ORDER BY ?rule

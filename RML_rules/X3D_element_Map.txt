@@ -1,0 +1,82 @@
+@prefix : <http://example.org/> .
+@prefix rules: <http://example.org/rules/> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix x3do: <https://www.web3d.org/specifications/X3dOntology4.0#> .
+@prefix x3d: <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+rules:OntologyMap a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/" 
+  ];
+  rr:subjectMap [
+    rr:template :;
+    rr:class owl:Ontology
+  ];
+ rr:predicateObjectMap [
+  rr:predicate owl:vesrionIRI;
+  rr:objectMap [
+    rr:constant <http://example.org/1.0.0>
+  ]
+];
+ rr:predicateObjectMap [
+  rr:predicate owl:vesrionInfo;
+  rr:objectMap [
+    rr:constant "1.0.0"
+  ]
+].
+
+rules:X3DMap a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "HelloWorld.x3d";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/X3D" 
+  ];
+  rr:subjectMap [
+    rr:template :X3D;
+    rr:class owl:NamedIndividual
+  ];
+ rr:predicateObjectMap [
+  rr:predicate rdf:type;
+  rr:objectMap [
+    rr:constant x3do:X3D
+  ]
+];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasHead;
+  rr:objectMap [
+    rr:constant :head
+  ]
+];
+ rr:predicateObjectMap [
+  rr:predicate x3do:hasScene;
+  rr:objectMap [
+    rr:constant :Scene
+  ]
+];
+ rr:predicateObjectMap [
+  rr:predicate x3do:profile;
+  rr:objectMap [
+    rml:reference "@profile"
+  ]
+];
+ rr:predicateObjectMap [
+  rr:predicate x3do:version;
+  rr:objectMap [
+    rml:reference "@version"
+  ]
+];
+ rr:predicateObjectMap [
+  rr:predicate x3do:noNamespaceSchemaLocation;
+  rr:objectMap [
+    rr:constant "https://www.web3d.org/specifications/x3d-3.3.xsd"
+  ]
+].
